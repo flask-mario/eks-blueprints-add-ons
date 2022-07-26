@@ -13,6 +13,9 @@ spec:
     path: add-ons/ondat
     targetRevision: {{ .Values.targetRevision }}
     helm:
+      values: |
+        ondat:
+        {{- toYaml .Values.ondat | nindent 10 }}
       parameters:
         {{- if .Values.ondat.serviceAccountName }}
         - name: ondat.ondat-operator.serviceAccount.name
@@ -31,7 +34,7 @@ spec:
           value: {{ .Values.ondat.clusterAdminPassword }}
         {{- end }}
         {{- if .Values.ondat.clusterKvBackendAddress }}
-        - name: ondat.ondat-operator.cluster.kvBackend.address 
+        - name: ondat.ondat-operator.cluster.kvBackend.address
           value: {{ .Values.ondat.clusterKvBackendAddress }}
         {{- end }}
         {{- if .Values.ondat.clusterNodeSelectorTermKey }}

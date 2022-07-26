@@ -6,12 +6,12 @@ account: ""
 clusterName: ""
 
 # Agones Values
-agones: 
-  enable: false 
+agones:
+  enable: false
 
 # App Mesh Values
-appMesh: 
-  enable: false 
+appMesh:
+  enable: false
 
 # Calico Values
 awsCalico:
@@ -31,6 +31,7 @@ awsEfsCsiDriver:
 awsForFluentBit:
   enable: false
   logGroupName:
+  serviceAccountName:
 
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
@@ -40,6 +41,8 @@ awsLoadBalancerController:
 # AWS Otel Collector Values
 awsOtelCollector:
   enable: false
+  otlpEndpoint:
+  resourceAttributes:
 
 # Cert Manager Values
 certManager:
@@ -57,8 +60,12 @@ externalDns:
   serviceAccountName:
   zoneIdFilter:
 
+# External Secrets Operator
+externalSecrets:
+  enable: false
+
 # Gatekeeper Values
-gatekeeper: 
+gatekeeper:
   enable: false
 
 # Nginx Values
@@ -66,14 +73,14 @@ ingressNginx:
   enable: false
 
 # Karpenter Values
-karpenter: 
+karpenter:
   enable: false
   serviceAccountName:
   controllerClusterEndpoint:
   awsDefaultInstanceProfile:
 
 # Keda Values
-keda: 
+keda:
   enable: false
   serviceAccountName:
 
@@ -105,7 +112,7 @@ ondat:
 prometheus:
   enable: false
   serviceAccountName:
-  roleArn: 
+  roleArn:
   ampWorkspaceUrl:
 
 # Metrics Server Values
@@ -115,17 +122,21 @@ sparkOperator:
 # Tetrate Istio Values
 tetrateIstio:
   enable: false
+  base:
+  cni:
+  istiod:
+  global:
 
 # Traefik Values
 traefik:
   enable: false
 
 # VPA Values
-vpa: 
+vpa:
   enable: false
 
 # Yunikorn Values
-yunikorn: 
+yunikorn:
   enable: false
 
 # Argo Rollout Values
